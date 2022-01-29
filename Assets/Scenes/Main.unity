@@ -331,7 +331,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6019797190581265573}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &255077747
+--- !u!114 &255077748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6019797190426855889, guid: d10ba17675d9cfe4392e50ff8768f2e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6019797190581265573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255077746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8196db11d4d25458d04827519f5d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &255077749
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,18 +439,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &255077748 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6019797190426855889, guid: d10ba17675d9cfe4392e50ff8768f2e7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6019797190581265573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255077746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8196db11d4d25458d04827519f5d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +746,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6019797190581265573}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &812367977
+--- !u!114 &812367978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6019797191379805391, guid: d10ba17675d9cfe4392e50ff8768f2e7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6019797190581265573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812367976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8196db11d4d25458d04827519f5d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &812367979
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -842,18 +854,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &812367978 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6019797191379805391, guid: d10ba17675d9cfe4392e50ff8768f2e7,
-    type: 3}
-  m_PrefabInstance: {fileID: 6019797190581265573}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 812367976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a8196db11d4d25458d04827519f5d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1215685525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageMoveSpeed: 2
   stageMoveTime: 30
+  bossRetreatTime: 25
   stagesHolder: {fileID: 134360022}
   stages:
   - {fileID: 812367978}

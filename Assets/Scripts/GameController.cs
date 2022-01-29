@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
 {
     public float stageMoveSpeed;
     public float stageMoveTime;
+    public float bossRetreatTime;
 
     public GameObject stagesHolder;
     public GameStage[] stages;
@@ -69,7 +70,8 @@ public class GameController : MonoBehaviour
             CurrentStage.gameObject.SetActive(false);
             _stageIndex++;
             CurrentStage.gameObject.SetActive(true);
-            _state = GameState.ReturningBack;
+            CurrentStage.boss.transform.SetParent(transform);
+            _state = GameState.BossChase;
             _timeMoved = 0;
         }
     }
@@ -101,7 +103,20 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.WaitingForPickup:
                 break;
+            case GameState.BossChase:
+                if (_timeMoved < bossRetreatTime)
+                {
+                    _timeMoved += Time.fixedDeltaTime;
+                    stagesHolder.transform.position += new Vector3(stageMoveSpeed, 0, 0) * Time.fixedDeltaTime;
+                }
+                else
+                {
+                    CurrentStage.boss.transform.SetParent(CurrentStage.transform);
+                    _state = GameState.ReturningBack;
+                }
+                break;
             case GameState.ReturningBack:
+
                 if (_timeMoved < stageMoveTime)
                 {
                     _timeMoved += Time.fixedDeltaTime;
@@ -123,6 +138,6 @@ public class GameController : MonoBehaviour
 
     public enum GameState
     {
-        Init, GoingToPickup, WaitingForPickup, ReturningBack, WaitingForDeposit, Finished
+        Init, GoingToPickup, WaitingForPickup, BossChase, ReturningBack, WaitingForDeposit, Finished
     }
 }
