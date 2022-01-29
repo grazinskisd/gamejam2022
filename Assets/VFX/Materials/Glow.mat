@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rune_03
-  m_Shader: {fileID: 4800000, guid: 6049521152a728e48a6d685d08b6dca6, type: 3}
+  m_Name: Glow
+  m_Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3d6176bcd5dfa214cb994886e5d961d6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9616e1cb065dd4e49b4decf61ac051ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -67,7 +67,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Intensity: 2
+    - _Intensity: 1
     - _MasterOpacity: 1
     - _Metallic: 0
     - _Mode: 0
@@ -82,4 +82,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 21.361254, g: 21.361254, b: 21.361254, a: 1}
+    - _Tint: {r: 0, g: 0, b: 0, a: 0}

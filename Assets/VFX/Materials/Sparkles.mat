@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rune_03
+  m_Name: Sparkles
   m_Shader: {fileID: 4800000, guid: 6049521152a728e48a6d685d08b6dca6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3d6176bcd5dfa214cb994886e5d961d6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 83042e11cb8099940bfcc19f585e397e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -82,4 +82,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 21.361254, g: 21.361254, b: 21.361254, a: 1}
+    - _Tint: {r: 11.984314, g: 11.984314, b: 11.984314, a: 1}
