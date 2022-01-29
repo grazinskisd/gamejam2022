@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public int health = 1;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);       
+        if (collision.gameObject.TryGetComponent<Bullet>(out var bullet))
+        {
+            health -= bullet.damage;
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

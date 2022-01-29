@@ -2,6 +2,7 @@
 
 public class Bullet : MonoBehaviour
 {
+    public int damage;
     public Vector3 velocity;
     private Rect _boundingRect;
 
