@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8196db11d4d25458d04827519f5d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupSpot: {fileID: 0}
   enemies: {fileID: 6019797191416928902}
   boss: {fileID: 4360908224143751421}
 --- !u!82 &255077749
@@ -371,7 +370,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -588,7 +587,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8196db11d4d25458d04827519f5d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupSpot: {fileID: 6019797191757457582}
   enemies: {fileID: 6019797191833150505}
   boss: {fileID: 4360908224784286101}
 --- !u!82 &812367979
