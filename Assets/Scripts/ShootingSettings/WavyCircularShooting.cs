@@ -16,6 +16,6 @@ public class WavyCircularShooting : ShootingBehaviourSettings
         var rotation = Quaternion.AngleAxis(adjustedDirection, Vector3.forward);
         bullet.velocity = rotation * new Vector3(0, projectileSpeed, 0);
         bullet.gameObject.layer = layer;
-        bullet.GetComponentInChildren<SpriteRenderer>().color = color;
+        SetBulletColor(bullet, color);
     }
 }

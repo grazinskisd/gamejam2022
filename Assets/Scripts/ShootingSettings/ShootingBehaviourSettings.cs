@@ -26,6 +26,15 @@ public class ShootingBehaviourSettings : ScriptableObject
         var rotation = Quaternion.AngleAxis(direction, Vector3.forward);
         bullet.velocity = rotation * new Vector3(0, projectileSpeed, 0);
         bullet.gameObject.layer = layer;
-        bullet.GetComponentInChildren<SpriteRenderer>().color = projectileColor;
+        SetBulletColor(bullet, projectileColor);
+    }
+
+    protected virtual void SetBulletColor(Bullet bullet, Color color)
+    {
+        var renderer = bullet.GetComponentInChildren<SpriteRenderer>();
+        if(renderer != null)
+        {
+            renderer.color = color;
+        }
     }
 }
