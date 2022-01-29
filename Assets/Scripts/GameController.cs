@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
             stage.gameObject.SetActive(false);
         }
 
-        CurrentStage.gameObject.SetActive(true);
+        CurrentStage.gameObject.SetActive(false);
 
         depositSpot.OnDeposit.AddListener(EnterNextStage);
     }
@@ -64,13 +64,20 @@ public class GameController : MonoBehaviour
 
     private void HandleObjectPickup(Pickup arg0)
     {
-        _state = GameState.ReturningBack;
-        _timeMoved = 0;
+        if (_state == GameState.WaitingForPickup)
+        {
+            CurrentStage.gameObject.SetActive(false);
+            _stageIndex++;
+            CurrentStage.gameObject.SetActive(true);
+            _state = GameState.ReturningBack;
+            _timeMoved = 0;
+        }
     }
 
     private void StartGame()
     {
         introScreen.SetActive(false);
+        CurrentStage.gameObject.SetActive(true);
         _state = GameState.GoingToPickup;
     }
 
