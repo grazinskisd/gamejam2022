@@ -1,29 +1,28 @@
 ﻿using UnityEngine;
 public class ShootBehaviour : MonoBehaviour
 {
-    public float shootSpeed;
     public KeyCode fireKey;
     public Transform shootOrigin;
+    public string bulletLayerName;
 
     public ShootingBehaviourSettings settings;
 
-    private float _lastShootTime;
+    private ShootingBehaviourSettings _settingsCopy;
     private Transform _bulletHolder;
+    private int _bulletLayer;
 
     private void Awake()
     {
+        _settingsCopy = Instantiate(settings);
         _bulletHolder = new GameObject("Bullet holder").transform;
+        _bulletLayer = LayerMask.NameToLayer(bulletLayerName);
     }
 
     private void Update()
     {
         if (Input.GetKey(fireKey))
         {
-            if (Time.time - _lastShootTime >= (1 / shootSpeed))
-            {
-                _lastShootTime = Time.time;
-                settings.Fire(shootOrigin.position, -90, _bulletHolder);
-            }
+            _settingsCopy.Fire(shootOrigin.position, -90, _bulletHolder, _bulletLayer);
         }
     }
 }

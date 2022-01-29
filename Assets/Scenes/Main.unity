@@ -1180,7 +1180,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1440,13 +1440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e619d9c7e1db144b8307c1f9672fbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrototype: {fileID: 3394078350456495405, guid: d362b698de928124ba3de940f0242eeb,
-    type: 3}
-  shootSpeed: 20
   fireKey: 32
-  projectileVelocity: {x: 20, y: 0, z: 0}
   shootOrigin: {fileID: 640142060}
-  settings: {fileID: 11400000, guid: 92b435a42ff467544a7abc9a6834faed, type: 2}
+  bulletLayerName: PlayerProjectiles
+  settings: {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
 --- !u!1001 &676351669
 PrefabInstance:
   m_ObjectHideFlags: 0
