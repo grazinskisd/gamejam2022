@@ -1473,8 +1473,7 @@ MonoBehaviour:
   shootOrigin: {fileID: 640142060}
   bulletLayerName: PlayerProjectiles
   settings:
-  - {fileID: 11400000, guid: 420b14cf94ff35e44ba32e2d3604d256, type: 2}
-  - {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
+  - {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4, type: 2}
   fireKey: 32
 --- !u!1001 &676351669
 PrefabInstance:
