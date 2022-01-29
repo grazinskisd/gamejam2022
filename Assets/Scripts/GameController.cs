@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
 {
     public float stageMoveSpeed;
     public float stageMoveTime;
+    public float bossRetreatTime;
 
     public GameObject stagesHolder;
     public GameStage[] stages;
@@ -37,7 +38,7 @@ public class GameController : MonoBehaviour
             stage.gameObject.SetActive(false);
         }
 
-        CurrentStage.gameObject.SetActive(true);
+        CurrentStage.gameObject.SetActive(false);
 
         depositSpot.OnDeposit.AddListener(EnterNextStage);
     }
@@ -64,13 +65,21 @@ public class GameController : MonoBehaviour
 
     private void HandleObjectPickup(Pickup arg0)
     {
-        _state = GameState.ReturningBack;
-        _timeMoved = 0;
+        if (_state == GameState.WaitingForPickup)
+        {
+            CurrentStage.gameObject.SetActive(false);
+            _stageIndex++;
+            CurrentStage.gameObject.SetActive(true);
+            CurrentStage.boss.transform.SetParent(transform);
+            _state = GameState.BossChase;
+            _timeMoved = 0;
+        }
     }
 
     private void StartGame()
     {
         introScreen.SetActive(false);
+        CurrentStage.gameObject.SetActive(true);
         _state = GameState.GoingToPickup;
     }
 
@@ -94,7 +103,20 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.WaitingForPickup:
                 break;
+            case GameState.BossChase:
+                if (_timeMoved < bossRetreatTime)
+                {
+                    _timeMoved += Time.fixedDeltaTime;
+                    stagesHolder.transform.position += new Vector3(stageMoveSpeed, 0, 0) * Time.fixedDeltaTime;
+                }
+                else
+                {
+                    CurrentStage.boss.transform.SetParent(CurrentStage.transform);
+                    _state = GameState.ReturningBack;
+                }
+                break;
             case GameState.ReturningBack:
+
                 if (_timeMoved < stageMoveTime)
                 {
                     _timeMoved += Time.fixedDeltaTime;
@@ -116,6 +138,6 @@ public class GameController : MonoBehaviour
 
     public enum GameState
     {
-        Init, GoingToPickup, WaitingForPickup, ReturningBack, WaitingForDeposit, Finished
+        Init, GoingToPickup, WaitingForPickup, BossChase, ReturningBack, WaitingForDeposit, Finished
     }
 }
