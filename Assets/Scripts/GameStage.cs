@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameStage : MonoBehaviour
 {
-    public PickupSpot pickupSpot;
     public GameObject enemies;
     public GameObject boss;
 }

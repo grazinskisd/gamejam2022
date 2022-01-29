@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     public PlayerController playerController;
     public ShootBehaviour playerShootBehaviour;
     public DepositSpot depositSpot;
+    public PickupSpot pickupSpot;
 
     private int _stageIndex;
     private float _timeMoved;
@@ -35,9 +36,10 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < stages.Length; i++)
         {
             var stage = stages[i];
-            stage.pickupSpot.OnPickup.AddListener(HandleObjectPickup);
             stage.gameObject.SetActive(false);
         }
+
+        pickupSpot.OnPickup.AddListener(HandleObjectPickup);
 
         CurrentStage.gameObject.SetActive(false);
         paralaxController.SpeedMultiplier = 0;
@@ -76,6 +78,7 @@ public class GameController : MonoBehaviour
             _state = GameState.BossChase;
             _timeMoved = 0;
             paralaxController.SpeedMultiplier = 1;
+            pickupSpot.gameObject.SetActive(false);
         }
     }
 
@@ -129,6 +132,7 @@ public class GameController : MonoBehaviour
                 }
                 else
                 {
+                    pickupSpot.gameObject.SetActive(true);
                     _state = GameState.WaitingForDeposit;
                     paralaxController.SpeedMultiplier = 0;
                 }

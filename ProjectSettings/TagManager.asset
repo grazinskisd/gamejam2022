@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rune
   - MoveStop
+  - RuneDeposit
   layers:
   - Default
   - TransparentFX

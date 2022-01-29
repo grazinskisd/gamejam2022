@@ -4,7 +4,6 @@ using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     private const string RuneTag = "Rune";
-    private const string StopMoveTag = "MoveStop";
     public float moveSpeed = 1;
     public LayerMask enemyProjectileMask;
 
@@ -12,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _ridigbody;
     private bool _hasMovementStarted;
-    private GameObject _currentRune;
+    private Pickup _currentRune;
     private bool _canMove;
 
     private void Awake()
@@ -44,22 +43,19 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag(RuneTag))
         {
-            _currentRune = collision.gameObject;
+            _currentRune = collision.gameObject.GetComponent<Pickup>();
             _currentRune.gameObject.SetActive(false);
-            _currentRune.GetComponent<Pickup>().IssuePickupEvent();
+            _currentRune.IssuePickupEvent();
         }
 
-        if (collision.gameObject.CompareTag(StopMoveTag))
+        if (collision.gameObject.CompareTag("RuneDeposit"))
         {
-            _canMove = false;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag(StopMoveTag))
-        {
-            _canMove = true;
+            if (_currentRune != null)
+            {
+                var deposit = collision.gameObject;
+                deposit.GetComponent<DepositSpot>().AddRune(_currentRune);
+                _currentRune = null;
+            }
         }
     }
 }
