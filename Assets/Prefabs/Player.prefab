@@ -14643,11 +14643,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4185f2bfef201254584a17e235ca5f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  healthRegenSpeed: 5
   moveSpeed: 5
   enemyProjectileMask:
     serializedVersion: 2
     m_Bits: 2048
+  healthView: {fileID: 0}
   OnMoveStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlayerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!50 &653715457
