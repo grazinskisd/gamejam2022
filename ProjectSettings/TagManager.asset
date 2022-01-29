@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rune
+  - MoveStop
   layers:
   - Default
   - TransparentFX
