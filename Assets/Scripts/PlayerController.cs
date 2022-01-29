@@ -5,10 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1;
+    public LayerMask enemyProjectileMask;
 
-    private void Update()
+    private Rigidbody2D _ridigbody;
+
+    private void Awake()
     {
-        var input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        transform.position += input * Time.deltaTime * moveSpeed;
+        _ridigbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        _ridigbody.MovePosition(_ridigbody.position + (input * Time.fixedDeltaTime * moveSpeed));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.IsInLayerMask(enemyProjectileMask))
+        {
+            Debug.Log("Player hit a bullet");
+        }
     }
 }
