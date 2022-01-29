@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject stagesHolder;
     public GameStage[] stages;
     public GameObject introScreen;
+    public ParalaxController paralaxController;
 
     [Header("Player")]
     public PlayerController playerController;
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour
         }
 
         CurrentStage.gameObject.SetActive(false);
+        paralaxController.SpeedMultiplier = 0;
 
         depositSpot.OnDeposit.AddListener(EnterNextStage);
     }
@@ -73,6 +75,7 @@ public class GameController : MonoBehaviour
             CurrentStage.boss.transform.SetParent(transform);
             _state = GameState.BossChase;
             _timeMoved = 0;
+            paralaxController.SpeedMultiplier = 1;
         }
     }
 
@@ -81,6 +84,7 @@ public class GameController : MonoBehaviour
         introScreen.SetActive(false);
         CurrentStage.gameObject.SetActive(true);
         _state = GameState.GoingToPickup;
+        paralaxController.SpeedMultiplier = -1;
     }
 
     private void FixedUpdate()
@@ -98,6 +102,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     Destroy(CurrentStage.enemies.gameObject);
+                    paralaxController.SpeedMultiplier = 0;
                     _state = GameState.WaitingForPickup;
                 }
                 break;
@@ -125,6 +130,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     _state = GameState.WaitingForDeposit;
+                    paralaxController.SpeedMultiplier = 0;
                 }
                 break;
             case GameState.WaitingForDeposit:
