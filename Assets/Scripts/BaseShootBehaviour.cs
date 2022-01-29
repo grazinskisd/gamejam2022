@@ -2,6 +2,7 @@
 
 public abstract class BaseShootBehaviour : MonoBehaviour
 {
+    public Color projectileColor;
     public Transform shootOrigin;
     public string bulletLayerName;
 
@@ -39,7 +40,7 @@ public abstract class BaseShootBehaviour : MonoBehaviour
     {
         for (int i = 0; i < _settingsCopy.Length; i++)
         {
-            _settingsCopy[i].Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer);
+            _settingsCopy[i].Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer, projectileColor);
         }
     }
 }

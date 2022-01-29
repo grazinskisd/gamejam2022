@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e4bae07c0ac484c93d7aacae5a5476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileColor: {r: 1, g: 0.062745094, b: 0.27426958, a: 1}
   shootOrigin: {fileID: 6020961920349123313}
   bulletLayerName: EnemyProjectiles
   settings:

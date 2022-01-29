@@ -5,7 +5,7 @@ public class CircularShooting : ShootingBehaviourSettings
 {
     public int angleStep = 10;
 
-    protected override void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer)
+    protected override void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer, Color color)
     {
         for (int i = 0; i < 360; i += angleStep)
         {
@@ -17,6 +17,7 @@ public class CircularShooting : ShootingBehaviourSettings
             var rotation = Quaternion.AngleAxis(adjustedDirection, Vector3.forward);
             bullet.velocity = rotation * new Vector3(0, projectileSpeed, 0);
             bullet.gameObject.layer = layer;
+            bullet.GetComponentInChildren<SpriteRenderer>().color = color;
         }
     }
 }

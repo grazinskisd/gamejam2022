@@ -6,7 +6,7 @@ public class WavyCircularShooting : ShootingBehaviourSettings
     public float amplitude = 1;
     public float frequency = 1;
 
-    protected override void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer)
+    protected override void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer, Color color)
     {
         var adjustedDirection = direction + Mathf.Sin(Time.time * frequency) * amplitude;
 
@@ -16,5 +16,6 @@ public class WavyCircularShooting : ShootingBehaviourSettings
         var rotation = Quaternion.AngleAxis(adjustedDirection, Vector3.forward);
         bullet.velocity = rotation * new Vector3(0, projectileSpeed, 0);
         bullet.gameObject.layer = layer;
+        bullet.GetComponentInChildren<SpriteRenderer>().color = color;
     }
 }

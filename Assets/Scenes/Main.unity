@@ -1364,10 +1364,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 812367977}
     m_Modifications:
+    - target: {fileID: 2792918970568897916, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792918970568897916, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.b
+      value: 0.27426958
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792918970568897916, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.g
+      value: 0.062745094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2792918970568897916, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4319295301382011326, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4319295301382011326, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
         type: 3}
@@ -1418,6 +1438,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598565738801386704, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598565738801386704, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.b
+      value: 0.27426958
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598565738801386704, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.g
+      value: 0.062745094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598565738801386704, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
+      propertyPath: projectileColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7070858467163412170, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
         type: 3}
@@ -2217,12 +2257,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 632194591}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &640142060 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8177932454311342033, guid: 5e2d3217d631e0c468bf592d89727514,
-    type: 3}
-  m_PrefabInstance: {fileID: 4133539629633452273}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &649338593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,40 +2296,25 @@ Transform:
   m_Father: {fileID: 1533427853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &653715456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4534560976579026946, guid: 5e2d3217d631e0c468bf592d89727514,
+--- !u!114 &653715457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 185121844025499460, guid: 5e2d3217d631e0c468bf592d89727514,
     type: 3}
   m_PrefabInstance: {fileID: 4133539629633452273}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &653715457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653715456}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e619d9c7e1db144b8307c1f9672fbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootOrigin: {fileID: 640142060}
-  bulletLayerName: PlayerProjectiles
-  settings:
-  - {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4, type: 2}
-  - {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
-  OnShootStart:
-    m_PersistentCalls:
-      m_Calls: []
-  fireKey: 32
 --- !u!114 &653715459 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6628299870766456720, guid: 5e2d3217d631e0c468bf592d89727514,
     type: 3}
   m_PrefabInstance: {fileID: 4133539629633452273}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653715456}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4185f2bfef201254584a17e235ca5f5b, type: 3}
@@ -5599,6 +5618,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 185121844025499460, guid: 5e2d3217d631e0c468bf592d89727514,
+        type: 3}
+      propertyPath: projectileColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 185121844025499460, guid: 5e2d3217d631e0c468bf592d89727514,
+        type: 3}
+      propertyPath: projectileColor.b
+      value: 0.94422436
+      objectReference: {fileID: 0}
+    - target: {fileID: 185121844025499460, guid: 5e2d3217d631e0c468bf592d89727514,
+        type: 3}
+      propertyPath: projectileColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 185121844025499460, guid: 5e2d3217d631e0c468bf592d89727514,
+        type: 3}
+      propertyPath: projectileColor.r
+      value: 0.19339621
+      objectReference: {fileID: 0}
     - target: {fileID: 4534560976579026946, guid: 5e2d3217d631e0c468bf592d89727514,
         type: 3}
       propertyPath: m_Name
@@ -5606,29 +5645,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5334764845036124913, guid: 5e2d3217d631e0c468bf592d89727514,
         type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5334764845036124913, guid: 5e2d3217d631e0c468bf592d89727514,
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42ed1b7861f8d954ca9c370aec9e236d,
         type: 3}
-      propertyPath: m_SortingLayerID
-      value: -524791843
-      objectReference: {fileID: 0}
-    - target: {fileID: 5893132029123758215, guid: 5e2d3217d631e0c468bf592d89727514,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5893132029123758215, guid: 5e2d3217d631e0c468bf592d89727514,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -524791843
-      objectReference: {fileID: 0}
-    - target: {fileID: 6628299870766456720, guid: 5e2d3217d631e0c468bf592d89727514,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7643545718945872251, guid: 5e2d3217d631e0c468bf592d89727514,
         type: 3}
       propertyPath: m_RootOrder
