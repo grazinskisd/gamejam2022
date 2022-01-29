@@ -19,11 +19,13 @@ public class GameController : MonoBehaviour
     private float _timeMoved;
 
     private GameState _state = GameState.Init;
+    private Vector3 _stageStartPosition;
 
     private GameStage CurrentStage => stages[_stageIndex];
 
     private void Awake()
     {
+        _stageStartPosition = stagesHolder.transform.position;
         introScreen.SetActive(true);
         playerController.OnMoveStart.AddListener(StartGame);
         playerShootBehaviour.OnShootStart.AddListener(StartGame);
@@ -42,17 +44,21 @@ public class GameController : MonoBehaviour
 
     private void EnterNextStage(Pickup arg0)
     {
-        if (_state == GameState.WaitingForDeposit)
+        if (_state == GameState.WaitingForDeposit || _state == GameState.ReturningBack)
         {
             _state = GameState.GoingToPickup;
             CurrentStage.gameObject.SetActive(false);
             if (_stageIndex + 1 < stages.Length)
             {
+                stagesHolder.transform.position = _stageStartPosition;
                 _stageIndex++;
-                _state = GameState.Finished;
                 CurrentStage.gameObject.SetActive(true);
+                _timeMoved = 0;
             }
-            _timeMoved = 0;
+            else
+            {
+                _state = GameState.Finished;
+            }
         }
     }
 

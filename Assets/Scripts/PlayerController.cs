@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
+    private const string RuneTag = "Rune";
     public float moveSpeed = 1;
     public LayerMask enemyProjectileMask;
 
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D _ridigbody;
     private bool _hasMovementStarted;
+    private GameObject _currentRune;
 
     private void Awake()
     {
@@ -32,6 +34,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.IsInLayerMask(enemyProjectileMask))
         {
             Debug.Log("Player hit a bullet");
+        }
+
+        if (collision.gameObject.CompareTag(RuneTag))
+        {
+            _currentRune = collision.gameObject;
+            _currentRune.gameObject.SetActive(false);
+            _currentRune.GetComponent<Pickup>().IssuePickupEvent();
         }
     }
 }

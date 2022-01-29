@@ -16,5 +16,6 @@ public class PickupSpot : MonoBehaviour
     private void IssuePickupEvent(Pickup arg0)
     {
         OnPickup?.Invoke(arg0);
+        gameObject.SetActive(false);
     }
 }
