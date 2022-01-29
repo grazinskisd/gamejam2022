@@ -1,30 +1,15 @@
 ﻿using UnityEngine;
-public class ShootBehaviour : MonoBehaviour
+public class ShootBehaviour : BaseShootBehaviour
 {
-    public Bullet bulletPrototype;
-    public float shootSpeed;
     public KeyCode fireKey;
-    public Vector3 projectileVelocity;
-    public Transform shootOrigin;
 
-    private float _lastShootTime;
-    private Transform _bulletHolder;
+    protected override float Angle => -90;
 
-    private void Awake()
-    {
-        _bulletHolder = new GameObject("Bullet holder").transform;
-    }
-
-    private void Update()
+    protected override void Shoot()
     {
         if (Input.GetKey(fireKey))
         {
-            if (Time.time - _lastShootTime >= (1 / shootSpeed))
-            {
-                var bullet = Instantiate(bulletPrototype, _bulletHolder);
-                bullet.transform.position = shootOrigin.position;
-                bullet.velocity = projectileVelocity;
-            }
+            base.Shoot();
         }
     }
 }
