@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9cef3ab71553d4dbfe9639ca2cc7b9, type: 3}
-  m_Name: Wavy Circular Shooting
+  m_Script: {fileID: 11500000, guid: 247ed0234bf1a9b41b8412728b972a45, type: 3}
+  m_Name: Slow Shooting Round
   m_EditorClassIdentifier: 
   bulletPrototype: {fileID: 8850163439397090046, guid: 0da89464e85164945aadca50ac474bf1,
     type: 3}
-  projectileSpeed: 5
-  shootSpeed: 15
+  projectileSpeed: 6
+  shootSpeed: 1
   shootSound: {fileID: 8300000, guid: 617fe3a0066595e46a0ad8184a7596f5, type: 3}
-  amplitude: 5
-  frequency: 10
