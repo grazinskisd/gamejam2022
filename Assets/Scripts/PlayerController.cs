@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
             _currentRune = collision.gameObject.GetComponent<Pickup>();
             _currentRune.gameObject.SetActive(false);
             _currentRune.IssuePickupEvent();
+            _currentRune.CanPickUp = false;
         }
 
         if (collision.gameObject.CompareTag("RuneDeposit"))
