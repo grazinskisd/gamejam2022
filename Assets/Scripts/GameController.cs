@@ -53,6 +53,9 @@ public class GameController : MonoBehaviour
     {
         if (_state == GameState.WaitingForDeposit || _state == GameState.ReturningBack)
         {
+            playerShootBehaviour.CanFire = true;
+            playerController.transform.rotation = Quaternion.Euler(0, 0, 0);
+
             _state = GameState.GoingToPickup;
             CurrentStage.gameObject.SetActive(false);
             if (_stageIndex + 1 < stages.Length)
@@ -79,6 +82,7 @@ public class GameController : MonoBehaviour
             CurrentStage.boss.transform.SetParent(bossMover.transform);
             bossMover.SetBool(IsMovingAnimatorBool, true);
             _state = GameState.BossChase;
+            playerController.transform.rotation = Quaternion.Euler(0, 180, 0);
             _timeMoved = 0;
             paralaxController.SpeedMultiplier = 1;
             pickupSpot.gameObject.SetActive(false);
@@ -109,6 +113,7 @@ public class GameController : MonoBehaviour
                 {
                     Destroy(CurrentStage.enemies.gameObject);
                     paralaxController.SpeedMultiplier = 0;
+                    playerShootBehaviour.CanFire = false;
                     _state = GameState.WaitingForPickup;
                 }
                 break;

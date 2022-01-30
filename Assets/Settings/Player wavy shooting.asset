@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9cef3ab71553d4dbfe9639ca2cc7b9, type: 3}
+  m_Name: Player wavy shooting
+  m_EditorClassIdentifier: 
+  bulletPrototype: {fileID: 6098193595724941269, guid: 3c63035636ab46f4ba7ea5cd36536de0,
+    type: 3}
+  projectileSpeed: 5
+  shootSpeed: 10
+  shootSound: {fileID: 8300000, guid: 617fe3a0066595e46a0ad8184a7596f5, type: 3}
+  amplitude: 5
+  frequency: 10

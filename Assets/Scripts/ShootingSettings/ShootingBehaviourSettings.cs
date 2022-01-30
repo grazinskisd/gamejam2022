@@ -10,18 +10,18 @@ public class ShootingBehaviourSettings : ScriptableObject
 
     private float _lastShootTime;
 
-    public bool Fire(Vector3 originPosition, float direction, Transform parent, int layer, Color projectileColor)
+    public bool Fire(Vector3 originPosition, float direction, Transform parent, int layer)
     {
         if (Time.time - _lastShootTime >= (1 / shootSpeed))
         {
             _lastShootTime = Time.time;
-            CreateBullet(originPosition, direction, parent, layer, projectileColor);
+            CreateBullet(originPosition, direction, parent, layer);
             return true;
         }
         return false;
     }
 
-    protected virtual void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer, Color projectileColor)
+    protected virtual void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer)
     {
         var bullet = Instantiate(bulletPrototype, parent);
         bullet.transform.position = originPosition;
@@ -29,15 +29,5 @@ public class ShootingBehaviourSettings : ScriptableObject
         var rotation = Quaternion.AngleAxis(direction, Vector3.forward);
         bullet.velocity = rotation * new Vector3(0, projectileSpeed, 0);
         bullet.gameObject.layer = layer;
-        SetBulletColor(bullet, projectileColor);
-    }
-
-    protected virtual void SetBulletColor(Bullet bullet, Color color)
-    {
-        var renderer = bullet.GetComponentInChildren<SpriteRenderer>();
-        if(renderer != null)
-        {
-            renderer.color = color;
-        }
     }
 }

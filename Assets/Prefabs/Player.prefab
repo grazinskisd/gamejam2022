@@ -48393,12 +48393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e619d9c7e1db144b8307c1f9672fbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileColor: {r: 0.19339621, g: 1, b: 0.94422436, a: 1}
   shootOrigin: {fileID: 8177932454311342033}
   bulletLayerName: PlayerProjectiles
   settings:
-  - {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4, type: 2}
-  - {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
+  - {fileID: 11400000, guid: 663f0f0bda0b51441a36a7d6d7a53776, type: 2}
   OnShootStart:
     m_PersistentCalls:
       m_Calls: []

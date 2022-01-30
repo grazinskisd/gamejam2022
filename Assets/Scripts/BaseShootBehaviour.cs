@@ -2,7 +2,6 @@
 
 public abstract class BaseShootBehaviour : MonoBehaviour
 {
-    public Color projectileColor;
     public Transform shootOrigin;
     public string bulletLayerName;
 
@@ -43,7 +42,7 @@ public abstract class BaseShootBehaviour : MonoBehaviour
         for (int i = 0; i < _settingsCopy.Length; i++)
         {
             var settings = _settingsCopy[i];
-            var didFire = settings.Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer, projectileColor);
+            var didFire = settings.Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer);
             if(didFire && settings.shootSound != null && _audioSource != null)
             {
                 _audioSource.PlayOneShot(settings.shootSound);
