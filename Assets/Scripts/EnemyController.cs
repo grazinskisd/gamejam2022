@@ -5,6 +5,12 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public int health = 1;
+    private ExplosionSpawner _explosionController;
+
+    private void Awake()
+    {
+        _explosionController = FindObjectOfType<ExplosionSpawner>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +21,8 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
+            Debug.Log("Enemy death");
+            _explosionController.SpawnExplosion(transform.position);
             Destroy(gameObject);
         }
     }

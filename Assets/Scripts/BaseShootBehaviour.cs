@@ -24,7 +24,7 @@ public abstract class BaseShootBehaviour : MonoBehaviour
 
         _bulletHolder = GameObject.Find("BulletHolder").transform;
         _bulletLayer = LayerMask.NameToLayer(bulletLayerName);
-        _audioSource = GameObject.Find("SFXAudioSource").GetComponent<AudioSource>();
+        _audioSource = GameObject.Find(Globals.SFXSourceName).GetComponent<AudioSource>();
     }
 
     private void Update()
