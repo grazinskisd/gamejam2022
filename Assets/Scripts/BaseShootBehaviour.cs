@@ -5,13 +5,13 @@ public abstract class BaseShootBehaviour : MonoBehaviour
     public Color projectileColor;
     public Transform shootOrigin;
     public string bulletLayerName;
-    public AudioSource audioSource;
 
     public ShootingBehaviourSettings[] settings;
 
     private ShootingBehaviourSettings[] _settingsCopy;
     private Transform _bulletHolder;
     private int _bulletLayer;
+    private AudioSource _audioSource;
 
     protected abstract float Angle { get; }
 
@@ -25,6 +25,7 @@ public abstract class BaseShootBehaviour : MonoBehaviour
 
         _bulletHolder = GameObject.Find("BulletHolder").transform;
         _bulletLayer = LayerMask.NameToLayer(bulletLayerName);
+        _audioSource = GameObject.Find("SFXAudioSource").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -42,10 +43,10 @@ public abstract class BaseShootBehaviour : MonoBehaviour
         for (int i = 0; i < _settingsCopy.Length; i++)
         {
             var settings = _settingsCopy[i];
-            settings.Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer, projectileColor);
-            if(settings.shootSound != null)
+            var didFire = settings.Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer, projectileColor);
+            if(didFire && settings.shootSound != null && _audioSource != null)
             {
-                audioSource.PlayOneShot(settings.shootSound, Globals.SfxVolume);
+                _audioSource.PlayOneShot(settings.shootSound);
             }
         }
     }

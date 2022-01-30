@@ -10,13 +10,15 @@ public class ShootingBehaviourSettings : ScriptableObject
 
     private float _lastShootTime;
 
-    public void Fire(Vector3 originPosition, float direction, Transform parent, int layer, Color projectileColor)
+    public bool Fire(Vector3 originPosition, float direction, Transform parent, int layer, Color projectileColor)
     {
         if (Time.time - _lastShootTime >= (1 / shootSpeed))
         {
             _lastShootTime = Time.time;
             CreateBullet(originPosition, direction, parent, layer, projectileColor);
+            return true;
         }
+        return false;
     }
 
     protected virtual void CreateBullet(Vector3 originPosition, float direction, Transform parent, int layer, Color projectileColor)

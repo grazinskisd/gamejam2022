@@ -16,3 +16,4 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 6
   shootSpeed: 1
+  shootSound: {fileID: 8300000, guid: 617fe3a0066595e46a0ad8184a7596f5, type: 3}
