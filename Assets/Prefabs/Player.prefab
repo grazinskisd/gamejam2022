@@ -48310,7 +48310,10 @@ GameObject:
   - component: {fileID: 7643545718945872251}
   - component: {fileID: 6628299870766456720}
   - component: {fileID: 653715457}
+  - component: {fileID: 5673163046846001921}
   - component: {fileID: 185121844025499460}
+  - component: {fileID: 8552755799532820313}
+  - component: {fileID: 5226453701223471594}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -48381,6 +48384,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &5673163046846001921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534560976579026946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925a7212e1c1989459c956d51ccf12fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 185121844025499460}
+  - {fileID: 8552755799532820313}
+  - {fileID: 5226453701223471594}
+  currentLevel: 0
 --- !u!114 &185121844025499460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48397,6 +48417,49 @@ MonoBehaviour:
   bulletLayerName: PlayerProjectiles
   settings:
   - {fileID: 11400000, guid: 663f0f0bda0b51441a36a7d6d7a53776, type: 2}
+  OnShootStart:
+    m_PersistentCalls:
+      m_Calls: []
+  fireKey: 32
+--- !u!114 &8552755799532820313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534560976579026946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e619d9c7e1db144b8307c1f9672fbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootOrigin: {fileID: 8177932454311342033}
+  bulletLayerName: PlayerProjectiles
+  settings:
+  - {fileID: 11400000, guid: 663f0f0bda0b51441a36a7d6d7a53776, type: 2}
+  - {fileID: 11400000, guid: 0790b7e6d543ad740811436cfe124a74, type: 2}
+  OnShootStart:
+    m_PersistentCalls:
+      m_Calls: []
+  fireKey: 32
+--- !u!114 &5226453701223471594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534560976579026946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e619d9c7e1db144b8307c1f9672fbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootOrigin: {fileID: 8177932454311342033}
+  bulletLayerName: PlayerProjectiles
+  settings:
+  - {fileID: 11400000, guid: 663f0f0bda0b51441a36a7d6d7a53776, type: 2}
+  - {fileID: 11400000, guid: 0790b7e6d543ad740811436cfe124a74, type: 2}
+  - {fileID: 11400000, guid: 05884827445f4704f875259af259cb24, type: 2}
   OnShootStart:
     m_PersistentCalls:
       m_Calls: []
