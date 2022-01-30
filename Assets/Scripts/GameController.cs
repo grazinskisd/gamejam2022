@@ -118,7 +118,6 @@ public class GameController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(_state);
         switch (_state)
         {
             case GameState.Init:
