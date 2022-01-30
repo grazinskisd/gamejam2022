@@ -15,7 +15,7 @@ MonoBehaviour:
   bulletPrototype: {fileID: 6647578296445971186, guid: 67149b1ac81fae14ab74ea29653b3a74,
     type: 3}
   projectileSpeed: 5
-  shootSpeed: 15
-  shootSound: {fileID: 0}
+  shootSpeed: 10
+  shootSound: {fileID: 8300000, guid: 2ff62a7b7a04803479b1e10a15f17243, type: 3}
   amplitude: 7
   frequency: 10

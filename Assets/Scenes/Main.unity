@@ -338,9 +338,9 @@ MonoBehaviour:
   explosionPrototype: {fileID: 7277511309457911114, guid: c6b8fe23f53b31944a42d49a16b32bcc,
     type: 3}
   explosionSounds:
-  - {fileID: 8300000, guid: c441d8f4e48fb0c4ebfbc452ecd515c8, type: 3}
-  - {fileID: 8300000, guid: 3ee84da59f2184b40b10f855e5f444c8, type: 3}
-  - {fileID: 8300000, guid: faf6e90753fe212489e2c2572e18ae17, type: 3}
+  - {fileID: 8300000, guid: 5d6c0ab8a58561146b7a1a1b6b9716a8, type: 3}
+  - {fileID: 8300000, guid: 899fedaba3eeafb448826f9e7e7e5764, type: 3}
+  - {fileID: 8300000, guid: e882e93a4673eb9428fb00df57639770, type: 3}
 --- !u!4 &339113610
 Transform:
   m_ObjectHideFlags: 0
@@ -1137,6 +1137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295001248}
   - component: {fileID: 1295001247}
+  - component: {fileID: 1295001249}
   m_Layer: 0
   m_Name: SFXAudioSource
   m_TagString: Untagged
@@ -1156,7 +1157,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.175
+  m_Volume: 0.491
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1254,6 +1255,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1295001249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295001246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90865d5b52c3a02498c829863b628bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxBufferTime: 0
 --- !u!114 &1592085515 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6019797191757457582, guid: d10ba17675d9cfe4392e50ff8768f2e7,

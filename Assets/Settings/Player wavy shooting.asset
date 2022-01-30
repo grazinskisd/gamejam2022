@@ -16,6 +16,6 @@ MonoBehaviour:
     type: 3}
   projectileSpeed: 5
   shootSpeed: 10
-  shootSound: {fileID: 8300000, guid: 617fe3a0066595e46a0ad8184a7596f5, type: 3}
+  shootSound: {fileID: 8300000, guid: 6c04863acd8923941a505e110762e36b, type: 3}
   amplitude: 5
   frequency: 10

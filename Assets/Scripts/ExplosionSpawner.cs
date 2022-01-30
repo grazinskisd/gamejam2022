@@ -4,11 +4,11 @@ public class ExplosionSpawner : MonoBehaviour
 {
     public GameObject explosionPrototype;
     public AudioClip[] explosionSounds;
-    private AudioSource _sfxSource;
+    private AudioPlayer _audioPlayer;
 
     private void Awake()
     {
-        _sfxSource = GameObject.Find(Globals.SFXSourceName).GetComponent<AudioSource>();
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     public void SpawnExplosion(Vector3 position)
@@ -20,6 +20,6 @@ public class ExplosionSpawner : MonoBehaviour
 
     private void PlayRandomExplosionSFX()
     {
-        _sfxSource.PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Length)]);
+        _audioPlayer.PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Length)]);
     }
 }
