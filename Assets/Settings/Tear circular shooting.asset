@@ -15,5 +15,6 @@ MonoBehaviour:
   bulletPrototype: {fileID: 6647578296445971186, guid: 67149b1ac81fae14ab74ea29653b3a74,
     type: 3}
   projectileSpeed: 4
-  shootSpeed: 0.8
+  shootSpeed: 1
+  shootSound: {fileID: 0}
   angleStep: 15

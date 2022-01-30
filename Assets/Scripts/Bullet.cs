@@ -4,12 +4,6 @@ public class Bullet : MonoBehaviour
 {
     public int damage;
     public Vector3 velocity;
-    private Rect _boundingRect;
-
-    private void Awake()
-    {
-        _boundingRect = new Rect(new Vector2(-10, -6), new Vector2(20, 12));
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,7 +13,7 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position += velocity * Time.fixedDeltaTime;
-        if (!_boundingRect.Contains(transform.position))
+        if (!Globals.BoundingRect.Contains(transform.position))
         {
             Destroy(gameObject);
         }

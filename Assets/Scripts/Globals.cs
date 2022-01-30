@@ -1,4 +1,7 @@
-﻿public static class Globals
+﻿using UnityEngine;
+
+public static class Globals
 {
-    public static float SfxVolume = 0.5f;
+    public static float SfxVolume = 0.4f;
+    public static Rect BoundingRect = new Rect(new Vector2(-10, -6), new Vector2(20, 12));
 }

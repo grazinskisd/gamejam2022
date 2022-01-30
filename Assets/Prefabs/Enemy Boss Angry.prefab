@@ -40,6 +40,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792918970568897916, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
         type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 8143527683269579299}
+    - target: {fileID: 2792918970568897916, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
       propertyPath: projectileColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -126,6 +131,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598565738801386704, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
         type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 8143527683269579299}
+    - target: {fileID: 4598565738801386704, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+        type: 3}
       propertyPath: projectileColor.a
       value: 1
       objectReference: {fileID: 0}
@@ -195,3 +205,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb, type: 3}
+--- !u!82 &8143527683269579299 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3028171627839349283, guid: 8d69d7aeb4b938c4b8b2c9fafb7185bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6558830148904300544}
+  m_PrefabAsset: {fileID: 0}
