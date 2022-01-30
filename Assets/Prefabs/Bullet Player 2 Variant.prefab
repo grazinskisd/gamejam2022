@@ -4823,6 +4823,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1985119291294957063, guid: 7f7c452b16526be4a9181d8f8be6cf5e,
+        type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2089857605346780452, guid: 7f7c452b16526be4a9181d8f8be6cf5e,
         type: 3}
       propertyPath: m_Sprite
@@ -4847,7 +4852,7 @@ PrefabInstance:
     - target: {fileID: 6259744886619899234, guid: 7f7c452b16526be4a9181d8f8be6cf5e,
         type: 3}
       propertyPath: m_Name
-      value: Bullet Player 2
+      value: Bullet Player 2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6259744886619899234, guid: 7f7c452b16526be4a9181d8f8be6cf5e,
         type: 3}
