@@ -1240,6 +1240,71 @@ MonoBehaviour:
   depositSpot: {fileID: 90365238}
   pickupSpot: {fileID: 1592085515}
   playerShootingLevel: {fileID: 4133539629633452274}
+  OnGameStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGoingToPickup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 237977654562002397}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 237977654562002396}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnWaitingForPickup:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBossChase:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 237977654562002397}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 237977654562002396}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnReturningBack:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWaitingForDeposit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFinished:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2061853550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,6 +1491,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa4ab4979f5200a42b445a59398e6815, type: 3}
+--- !u!1 &237977654562002396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3225994818225547883, guid: fa4ab4979f5200a42b445a59398e6815,
+    type: 3}
+  m_PrefabInstance: {fileID: 237977654562002395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &237977654562002397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5522716311221736897, guid: fa4ab4979f5200a42b445a59398e6815,
+    type: 3}
+  m_PrefabInstance: {fileID: 237977654562002395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4133539629633452273
 PrefabInstance:
   m_ObjectHideFlags: 0

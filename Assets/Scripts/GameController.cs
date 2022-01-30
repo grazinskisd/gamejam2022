@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
@@ -19,6 +20,16 @@ public class GameController : MonoBehaviour
     public DepositSpot depositSpot;
     public PickupSpot pickupSpot;
     public ShootBehaviourLevelController playerShootingLevel;
+
+    [Header("Game state events")]
+    //GoingToPickup, WaitingForPickup, BossChase, ReturningBack, WaitingForDeposit, Finished
+    public UnityEvent OnGameStart;
+    public UnityEvent OnGoingToPickup;
+    public UnityEvent OnWaitingForPickup;
+    public UnityEvent OnBossChase;
+    public UnityEvent OnReturningBack;
+    public UnityEvent OnWaitingForDeposit;
+    public UnityEvent OnFinished;
 
     private int _stageIndex;
     private float _timeMoved;
@@ -63,6 +74,34 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void EnterState(GameState state)
+    {
+        _state = state;
+        switch (state)
+        {
+            case GameState.GoingToPickup:
+                OnGoingToPickup?.Invoke();
+                break;
+            case GameState.WaitingForPickup:
+                OnWaitingForPickup?.Invoke();
+                break;
+            case GameState.BossChase:
+                OnBossChase?.Invoke();
+                break;
+            case GameState.ReturningBack:
+                OnReturningBack?.Invoke();
+                break;
+            case GameState.WaitingForDeposit:
+                OnWaitingForDeposit?.Invoke();
+                break;
+            case GameState.Finished:
+                OnFinished?.Invoke();
+                break;
+            default:
+                break;
+        }
+    }
+
     private void EnterNextStage(Pickup arg0)
     {
         if (_state == GameState.WaitingForDeposit || _state == GameState.ReturningBack)
@@ -71,7 +110,7 @@ public class GameController : MonoBehaviour
             playerController.transform.rotation = Quaternion.Euler(0, 0, 0);
             playerShootingLevel.IncrementLevel();
 
-            _state = GameState.GoingToPickup;
+            EnterState(GameState.GoingToPickup);
             CurrentStage.gameObject.SetActive(false);
             if (_stageIndex + 1 < stages.Length)
             {
@@ -83,7 +122,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                _state = GameState.Finished;
+                EnterState(GameState.Finished);
             }
         }
     }
@@ -97,7 +136,7 @@ public class GameController : MonoBehaviour
             CurrentStage.gameObject.SetActive(true);
             CurrentStage.boss.transform.SetParent(bossMover.transform);
             bossMover.SetBool(IsMovingAnimatorBool, true);
-            _state = GameState.BossChase;
+            EnterState(GameState.BossChase);
             playerController.transform.rotation = Quaternion.Euler(0, 180, 0);
             _timeMoved = 0;
             paralaxController.SpeedMultiplier = 1;
@@ -111,8 +150,9 @@ public class GameController : MonoBehaviour
         {
             introScreen.SetActive(false);
             CurrentStage.gameObject.SetActive(true);
-            _state = GameState.GoingToPickup;
+            EnterState(GameState.GoingToPickup);
             paralaxController.SpeedMultiplier = -1;
+            OnGameStart?.Invoke();
         }
     }
 
@@ -133,7 +173,7 @@ public class GameController : MonoBehaviour
                     Destroy(CurrentStage.enemies.gameObject);
                     paralaxController.SpeedMultiplier = 0;
                     SetPlayerShootEnabled(false);
-                    _state = GameState.WaitingForPickup;
+                    EnterState(GameState.WaitingForPickup);
                 }
                 break;
             case GameState.WaitingForPickup:
@@ -148,7 +188,7 @@ public class GameController : MonoBehaviour
                 {
                     CurrentStage.boss.transform.SetParent(CurrentStage.transform);
                     bossMover.SetBool(IsMovingAnimatorBool, false);
-                    _state = GameState.ReturningBack;
+                    EnterState(GameState.ReturningBack);
                 }
                 break;
             case GameState.ReturningBack:
@@ -161,7 +201,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     pickupSpot.gameObject.SetActive(true);
-                    _state = GameState.WaitingForDeposit;
+                    EnterState(GameState.WaitingForDeposit);
                     paralaxController.SpeedMultiplier = 0;
                 }
                 break;
