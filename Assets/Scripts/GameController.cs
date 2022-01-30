@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public ShootBehaviour playerShootBehaviour;
     public DepositSpot depositSpot;
     public PickupSpot pickupSpot;
+    public ShootBehaviourLevelController playerShootingLevel;
 
     private int _stageIndex;
     private float _timeMoved;
@@ -55,6 +56,7 @@ public class GameController : MonoBehaviour
         {
             playerShootBehaviour.CanFire = true;
             playerController.transform.rotation = Quaternion.Euler(0, 0, 0);
+            playerShootingLevel.IncrementLevel();
 
             _state = GameState.GoingToPickup;
             CurrentStage.gameObject.SetActive(false);
