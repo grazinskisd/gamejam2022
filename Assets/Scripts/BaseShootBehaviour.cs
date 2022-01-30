@@ -2,6 +2,8 @@
 
 public abstract class BaseShootBehaviour : MonoBehaviour
 {
+    private const float AudioTimeTolerance = 0.1f;
+
     public Transform shootOrigin;
     public string bulletLayerName;
 
@@ -11,6 +13,7 @@ public abstract class BaseShootBehaviour : MonoBehaviour
     private Transform _bulletHolder;
     private int _bulletLayer;
     private AudioPlayer _audioPlayer;
+    private float _lastTimePlayed;
 
     protected abstract float Angle { get; }
 
@@ -43,8 +46,9 @@ public abstract class BaseShootBehaviour : MonoBehaviour
         {
             var settings = _settingsCopy[i];
             var didFire = settings.Fire(shootOrigin.position, Angle, _bulletHolder, _bulletLayer);
-            if(didFire && settings.shootSound != null && _audioPlayer != null)
+            if (didFire && Time.time - _lastTimePlayed >= AudioTimeTolerance && settings.shootSound != null && _audioPlayer != null)
             {
+                _lastTimePlayed = Time.time;
                 _audioPlayer.PlayOneShot(settings.shootSound);
             }
         }
