@@ -674,18 +674,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592016588}
   m_CullTransparentMesh: 0
---- !u!114 &653715457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 185121844025499460, guid: 5e2d3217d631e0c468bf592d89727514,
-    type: 3}
-  m_PrefabInstance: {fileID: 4133539629633452273}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e619d9c7e1db144b8307c1f9672fbc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &653715459 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6628299870766456720, guid: 5e2d3217d631e0c468bf592d89727514,
@@ -1249,7 +1237,6 @@ MonoBehaviour:
   paralaxController: {fileID: 728465291}
   bossMover: {fileID: 289576449}
   playerController: {fileID: 653715459}
-  playerShootBehaviour: {fileID: 653715457}
   depositSpot: {fileID: 90365238}
   pickupSpot: {fileID: 1592085515}
   playerShootingLevel: {fileID: 4133539629633452274}
@@ -1665,6 +1652,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stages
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019797190524762518, guid: d10ba17675d9cfe4392e50ff8768f2e7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.079109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019797190524762518, guid: d10ba17675d9cfe4392e50ff8768f2e7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.104606
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019797190524762518, guid: d10ba17675d9cfe4392e50ff8768f2e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019797190524762518, guid: d10ba17675d9cfe4392e50ff8768f2e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d10ba17675d9cfe4392e50ff8768f2e7, type: 3}
