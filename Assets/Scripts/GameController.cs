@@ -214,6 +214,14 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
+
     public enum GameState
     {
         Init, GoingToPickup, WaitingForPickup, BossChase, ReturningBack, WaitingForDeposit, Finished
