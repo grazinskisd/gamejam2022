@@ -4818,6 +4818,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1985119291294957063, guid: 7f7c452b16526be4a9181d8f8be6cf5e,
+        type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2089857605346780452, guid: 7f7c452b16526be4a9181d8f8be6cf5e,
         type: 3}
       propertyPath: m_Sprite

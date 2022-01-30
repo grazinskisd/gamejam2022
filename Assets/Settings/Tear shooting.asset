@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 247ed0234bf1a9b41b8412728b972a45, type: 3}
-  m_Name: Simple Shooting Behaviour Settings
+  m_Name: Tear shooting
   m_EditorClassIdentifier: 
-  bulletPrototype: {fileID: 5520804939845872605, guid: 34bad294b74019248aef0e8659ba9a3a,
+  bulletPrototype: {fileID: 6647578296445971186, guid: 67149b1ac81fae14ab74ea29653b3a74,
     type: 3}
-  projectileSpeed: 20
-  shootSpeed: 10
+  projectileSpeed: 6
+  shootSpeed: 1

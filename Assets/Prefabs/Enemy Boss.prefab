@@ -162,6 +162,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &574379225436591039
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002777010802647239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3551a62d6475cc0419b86a963ff9f07d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2792918970568897916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,25 +219,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 420b14cf94ff35e44ba32e2d3604d256, type: 2}
   - {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4, type: 2}
   - {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
---- !u!95 &1182991994308528830
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048708901278408622}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3551a62d6475cc0419b86a963ff9f07d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &8291538882421792229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -266,17 +266,17 @@ PrefabInstance:
     - target: {fileID: 1301592657277501465, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1301592657277501465, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2026309652221459746, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_Name
-      value: Enemy Boss 1
+      value: Enemy Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
@@ -375,12 +375,6 @@ GameObject:
 --- !u!4 &4319295301382011326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
-    type: 3}
-  m_PrefabInstance: {fileID: 8291538882421792229}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2048708901278408622 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8034157074058723915, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
     type: 3}
   m_PrefabInstance: {fileID: 8291538882421792229}
   m_PrefabAsset: {fileID: 0}

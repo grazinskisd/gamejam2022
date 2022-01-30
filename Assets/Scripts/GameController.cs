@@ -1,8 +1,9 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    private const string IsMovingAnimatorBool = "IsMoving";
+
     public float stageMoveSpeed;
     public float stageMoveTime;
     public float bossRetreatTime;
@@ -11,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameStage[] stages;
     public GameObject introScreen;
     public ParalaxController paralaxController;
+    public Animator bossMover;
 
     [Header("Player")]
     public PlayerController playerController;
@@ -74,7 +76,8 @@ public class GameController : MonoBehaviour
             CurrentStage.gameObject.SetActive(false);
             _stageIndex++;
             CurrentStage.gameObject.SetActive(true);
-            CurrentStage.boss.transform.SetParent(transform);
+            CurrentStage.boss.transform.SetParent(bossMover.transform);
+            bossMover.SetBool(IsMovingAnimatorBool, true);
             _state = GameState.BossChase;
             _timeMoved = 0;
             paralaxController.SpeedMultiplier = 1;
@@ -120,6 +123,7 @@ public class GameController : MonoBehaviour
                 else
                 {
                     CurrentStage.boss.transform.SetParent(CurrentStage.transform);
+                    bossMover.SetBool(IsMovingAnimatorBool, false);
                     _state = GameState.ReturningBack;
                 }
                 break;
