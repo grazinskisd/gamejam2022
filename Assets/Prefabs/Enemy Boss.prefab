@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3694235441978790486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75, y: -0.059000015, z: 0}
+  m_LocalPosition: {x: -2.47, y: 0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4319295301382011326}
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7254123940389800411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.73, y: -1.0090001, z: 0}
+  m_LocalPosition: {x: -2.44, y: 0.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4319295301382011326}
@@ -172,7 +172,7 @@ Animator:
   m_GameObject: {fileID: 8002777010802647239}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3551a62d6475cc0419b86a963ff9f07d, type: 2}
+  m_Controller: {fileID: 9100000, guid: c8baf3d4770e4ee44903a7568561e67d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -181,44 +181,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2792918970568897916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8002777010802647239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e4bae07c0ac484c93d7aacae5a5476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileColor: {r: 0, g: 0, b: 0, a: 0}
-  shootOrigin: {fileID: 5590055002070906064}
-  bulletLayerName: EnemyProjectiles
-  settings:
-  - {fileID: 11400000, guid: 420b14cf94ff35e44ba32e2d3604d256, type: 2}
-  - {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4, type: 2}
-  - {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
---- !u!114 &4598565738801386704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8002777010802647239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e4bae07c0ac484c93d7aacae5a5476, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileColor: {r: 0, g: 0, b: 0, a: 0}
-  shootOrigin: {fileID: 2454106206254707100}
-  bulletLayerName: EnemyProjectiles
-  settings:
-  - {fileID: 11400000, guid: 420b14cf94ff35e44ba32e2d3604d256, type: 2}
-  - {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4, type: 2}
-  - {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44, type: 2}
 --- !u!1001 &8291538882421792229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,15 +215,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238994568939146031, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
+      propertyPath: settings.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2577aa52f1dc84147a200bae20cf54fd,
+        type: 2}
+    - target: {fileID: 1238994568939146031, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
+        type: 3}
       propertyPath: settings.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: f20111df4864fd944929a1eaccff67e4,
+      objectReference: {fileID: 11400000, guid: e40ea7c0bcdbae14cbd43296e0330124,
         type: 2}
     - target: {fileID: 1238994568939146031, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: settings.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: b99aa59097d23944a98a361d2b2d9f44,
+      objectReference: {fileID: 11400000, guid: 7cd3bd17f621bc648aaf1cbacf8ef234,
         type: 2}
     - target: {fileID: 1301592657277501465, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
@@ -286,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 66.65
       objectReference: {fileID: 0}
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
@@ -296,7 +264,7 @@ PrefabInstance:
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.8299714
       objectReference: {fileID: 0}
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
@@ -306,17 +274,17 @@ PrefabInstance:
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5251283613658670171, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
@@ -336,12 +304,12 @@ PrefabInstance:
     - target: {fileID: 6020961920349123313, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.97
+      value: -2.58
       objectReference: {fileID: 0}
     - target: {fileID: 6020961920349123313, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.62
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 7564919922792540113, guid: 8fb23bfb04c7c5342a2694b0d4787d98,
         type: 3}

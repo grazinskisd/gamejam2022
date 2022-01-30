@@ -16,7 +16,6 @@ public class GameController : MonoBehaviour
 
     [Header("Player")]
     public PlayerController playerController;
-    public ShootBehaviour playerShootBehaviour;
     public DepositSpot depositSpot;
     public PickupSpot pickupSpot;
     public ShootBehaviourLevelController playerShootingLevel;
@@ -26,6 +25,7 @@ public class GameController : MonoBehaviour
 
     private GameState _state = GameState.Init;
     private Vector3 _stageStartPosition;
+    private ShootBehaviour[] _playerShootBehaviours;
 
     private GameStage CurrentStage => stages[_stageIndex];
 
@@ -34,7 +34,12 @@ public class GameController : MonoBehaviour
         _stageStartPosition = stagesHolder.transform.position;
         introScreen.SetActive(true);
         playerController.OnMoveStart.AddListener(StartGame);
-        playerShootBehaviour.OnShootStart.AddListener(StartGame);
+
+        _playerShootBehaviours = playerController.GetComponents<ShootBehaviour>();
+        for (int i = 0; i < _playerShootBehaviours.Length; i++)
+        {
+            _playerShootBehaviours[i].OnShootStart.AddListener(StartGame);
+        }
 
         for (int i = 0; i < stages.Length; i++)
         {
@@ -50,11 +55,19 @@ public class GameController : MonoBehaviour
         depositSpot.OnDeposit.AddListener(EnterNextStage);
     }
 
+    private void SetPlayerShootEnabled(bool isEnabled)
+    {
+        for (int i = 0; i < _playerShootBehaviours.Length; i++)
+        {
+            _playerShootBehaviours[i].CanFire = isEnabled;
+        }
+    }
+
     private void EnterNextStage(Pickup arg0)
     {
         if (_state == GameState.WaitingForDeposit || _state == GameState.ReturningBack)
         {
-            playerShootBehaviour.CanFire = true;
+            SetPlayerShootEnabled(true);
             playerController.transform.rotation = Quaternion.Euler(0, 0, 0);
             playerShootingLevel.IncrementLevel();
 
@@ -66,6 +79,7 @@ public class GameController : MonoBehaviour
                 _stageIndex++;
                 CurrentStage.gameObject.SetActive(true);
                 _timeMoved = 0;
+                paralaxController.SpeedMultiplier = -1;
             }
             else
             {
@@ -93,14 +107,18 @@ public class GameController : MonoBehaviour
 
     private void StartGame()
     {
-        introScreen.SetActive(false);
-        CurrentStage.gameObject.SetActive(true);
-        _state = GameState.GoingToPickup;
-        paralaxController.SpeedMultiplier = -1;
+        if (_state == GameState.Init)
+        {
+            introScreen.SetActive(false);
+            CurrentStage.gameObject.SetActive(true);
+            _state = GameState.GoingToPickup;
+            paralaxController.SpeedMultiplier = -1;
+        }
     }
 
     private void FixedUpdate()
     {
+        Debug.Log(_state);
         switch (_state)
         {
             case GameState.Init:
@@ -115,7 +133,7 @@ public class GameController : MonoBehaviour
                 {
                     Destroy(CurrentStage.enemies.gameObject);
                     paralaxController.SpeedMultiplier = 0;
-                    playerShootBehaviour.CanFire = false;
+                    SetPlayerShootEnabled(false);
                     _state = GameState.WaitingForPickup;
                 }
                 break;

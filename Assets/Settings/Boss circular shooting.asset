@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 774e26499f1539747b71e9f61e8ba9b9, type: 3}
-  m_Name: Tear circular shooting
+  m_Name: Boss circular shooting
   m_EditorClassIdentifier: 
-  bulletPrototype: {fileID: 6647578296445971186, guid: 67149b1ac81fae14ab74ea29653b3a74,
+  bulletPrototype: {fileID: 8850163439397090046, guid: 0da89464e85164945aadca50ac474bf1,
     type: 3}
   projectileSpeed: 4
   shootSpeed: 1
