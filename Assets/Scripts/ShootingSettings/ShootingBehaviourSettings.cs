@@ -6,6 +6,7 @@ public class ShootingBehaviourSettings : ScriptableObject
     public Bullet bulletPrototype;
     public float projectileSpeed;
     public float shootSpeed;
+    public AudioClip shootSound;
 
     private float _lastShootTime;
 
